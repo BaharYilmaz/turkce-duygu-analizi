@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Veri Cek</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <script type="text/javascript">
+        const querystring = require('querystring');
+        function yorumCek() {
+            const CreateRequest = document.querySelector('.formYorumCek')
+
+            CreateRequest.addEventListener('submit', (e) => {
+                e.preventDefault()
+                const link = CreateRequest.querySelector('.link').value
+                JSON1 = {
+                    "link": link
+                };
+                //alert(link)
+                const payload = [JSON1]
+
+
+                var xhr = new XMLHttpRequest();
+                var url = "/yorumcek";
+                xhr.open("POST", url, true);
+                xhr.setRequestHeader("Content-Type", "application/json");
+
+                var data = JSON.stringify(payload);
+                //alert(data)
+                xhr.send(data);//Sending Data
+
+                xhr.onreadystatechange = function () {//Receiving Data
+                    console.log(xhr.status);
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var json = JSON.parse(xhr.responseText);
+                        console.log(JSON.stringify(json));
+                        document.getElementById("yorum").innerHTML = JSON.stringify(json);
+                    }
+                };
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div style="text-align: center;">
+            <h3>Yorum Çek - Hepsiburada </h3>
+            <h5>Herhangi Bir Ürünün Linkini Yazınız</h5><br/><br/>
+        </div>
+            <form class="formYorumCek form-group">
+
+                <div class="form-group">
+                    <input class="link form-control " id="link" type="text" placeholder="https://..." required>
+                </div>
+               
+               <div class="form-group">
+                <button id="linkCek" class="btn btn-lg btn-primary btn-block" onclick="yorumCek()">Yorum
+                    Çek</button>
+               </div>
+              
+                <!-- <input type="text" class="link" id="link" class="form-control" placeholder="Link" required >
+                <br />
+                <button id="linkCek" class="btn btn-lg btn-primary btn-block" onclick="yorumCek()">Yorum
+                    Çek</button> -->
+
+            </form>
+            <div>
+                <p id="yorum">
+
+                </p>
+            </div>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="/static/js/custom.js"></script>
+
+
+
+</body>
+
+</html>

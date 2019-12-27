@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %} Ana Sayfa {% endblock %}
+
+{% block main %}
+	
+
+
+
+<div class="container">
+    <div class="jumbotron">
+    <div class="row">
+        
+            <div class="panel panel-info">
+
+                <div class="panel-heading">
+                    <div class="panel-title">Tahmin Ekranı</div>
+                </div>
+                <div class="panel-body">
+
+                    <form action="{{ url_for('predict')}} " method="POST">
+
+                        <div class="form-group">
+							<textarea name="data" class="form-control" cols="60" rows="10" placeholder="yorum..." required=""></textarea>
+                        </div>
+                       
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Analiz</button>
+                        </div>
+
+                    </form>
+                </div>
+
+			</div>
+			<div>
+				<h4>Yorum Analiz Sonucu</h4>
+				<div>
+				<h3>{{analiz}}</h3>
+				</div>
+
+
+			</div>     
+    </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+{% endblock %}

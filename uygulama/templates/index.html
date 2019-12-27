@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div>
+        <form class="CreateRequest">
+            <input type="text" class="val">
+            <button onclick="myFunction()">getir</button>
+        </form>
+    </div>
+
+
+    <h2 id="prediction">
+        index sayfası
+        
+        {{prediction}}
+        </h2>
+        
+        
+ 
+        
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            const querystring = require('querystring');   
+           function myFunction(){
+             const CreateRequest = document.querySelector('.CreateRequest')
+           
+               CreateRequest.addEventListener('submit', (e) => {
+                     e.preventDefault()
+                     const val = CreateRequest.querySelector('.val').value
+                     JSON1 = {
+                         "val":val
+                      };
+                   alert(val)
+                      const payload=[JSON1]
+                    
+
+                       var xhr = new XMLHttpRequest();
+                       var url = "/index";
+                       xhr.open("POST", url, true);
+                       xhr.setRequestHeader("Content-Type", "application/json");
+           
+                       var data = JSON.stringify(payload);
+                       alert(data)
+                       xhr.send(data);//Sending Data
+                       
+                       xhr.onreadystatechange = function () {//Receiving Data
+                           console.log(xhr.status);
+                           if (xhr.readyState === 4 && xhr.status === 200) {
+                               var json = JSON.parse(xhr.responseText);
+                               console.log(JSON.stringify(json));
+                               document.getElementById("prediction").innerHTML = JSON.stringify(json);
+                           }
+                       };
+               })
+           }
+             </script>
+</body>
+</html>
