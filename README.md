@@ -3,7 +3,7 @@ Turkish sentiment analysis
 
 ## Amaç
 
-<b>Türkçe-Duygu Analizi</b>:<br>
+<b>Türkçe Duygu Analizi</b>:<br>
 Girilen yorum içeriğinin analiz edilip,yorumun olumlu ya da olumsuz olarak tahmin edilmesi amaçlanmaktadır.
 
 ## Özellikler
