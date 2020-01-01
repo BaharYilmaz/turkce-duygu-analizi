@@ -1,6 +1,11 @@
 # turkce-duygu-analizi
 Turkish sentiment analysis
 
+# Proje Grubu
+
+* Bahar YILMAZ 
+* Zişan KARSATAR https://github.com/zisankarsatar
+
 ## Amaç
 
 <b>Türkçe Duygu Analizi</b>:<br>
