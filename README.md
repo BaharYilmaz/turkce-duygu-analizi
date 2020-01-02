@@ -1,6 +1,8 @@
 # turkce-duygu-analizi
 Turkish sentiment analysis
 
+## E2EAI'19 Hackathon Projesi 
+
 ## Proje Grubu
 
 * Bahar YILMAZ 
