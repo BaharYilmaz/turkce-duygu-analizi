@@ -1,4 +1,4 @@
-# turkce-duygu-analizi
+# Türkçe Duygu Analizi
 Turkish sentiment analysis
 
 ## E2EAI'19 Hackathon Projesi 
