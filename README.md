@@ -13,7 +13,7 @@ Girilen yorum içeriğinin analiz edilip,yorumun olumlu ya da olumsuz olarak tah
 
 ## Özellikler
 
-* Veri toplama servisiyle farklı e-ticaret sitelerinden herhangi bir ürüne ait veri çekilebilmektedir.
+* Veri toplama servisiyle farklı e-ticaret sitelerinden herhangi bir ürüne ait yorum çekilebilmektedir.
 
 * Toplanan veriler makine öğrenmesi yöntemleriyle eğitilip bir model haline getirilmektedir. 
 
